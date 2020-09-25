@@ -27,7 +27,7 @@ router.get('/', auth, async (req, res) => {
 router.post(
 	'/',
 	[auth, [check('name', 'Name is required').not().isEmpty()]],
-	(req, res) => {
+	async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() });
@@ -66,7 +66,14 @@ router.post(
 				philhealthNumber,
 				user: req.user.id,
 			});
-		} catch (err) {}
+
+			const employee = await newEmployee.save();
+
+			res.json(employee);
+		} catch (err) {
+			console.error(err.message);
+			res.status(500).send('Server Error');
+		}
 	}
 );
 
