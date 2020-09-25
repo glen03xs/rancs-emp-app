@@ -22,9 +22,6 @@ const EmployeeSchema = mongoose.Schema({
 	contactNumber: {
 		type: String,
 	},
-	dateOfBirth: {
-		type: String,
-	},
 	address: {
 		type: String,
 	},
@@ -44,6 +41,9 @@ const EmployeeSchema = mongoose.Schema({
 		type: Date,
 	},
 	sssNumber: {
+		type: String,
+	},
+	philhealthNumber: {
 		type: String,
 	},
 	date: {

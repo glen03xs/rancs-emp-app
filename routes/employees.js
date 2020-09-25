@@ -24,9 +24,51 @@ router.get('/', auth, async (req, res) => {
 // @route 	POST api/employees
 // @desc 		Add new employee
 // @access 	Private
-router.post('/', (req, res) => {
-	res.send('Add new employee');
-});
+router.post(
+	'/',
+	[auth, [check('name', 'Name is required').not().isEmpty()]],
+	(req, res) => {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
+
+		const {
+			employeeNo,
+			name,
+			position,
+			email,
+			contactNumber,
+			address,
+			gender,
+			civilStatus,
+			dateOfBirth,
+			placeOfBirth,
+			dateHired,
+			sssNumber,
+			philhealthNumber,
+		} = req.body;
+
+		try {
+			const newEmployee = new Employee({
+				employeeNo,
+				name,
+				position,
+				email,
+				contactNumber,
+				address,
+				gender,
+				civilStatus,
+				dateOfBirth,
+				placeOfBirth,
+				dateHired,
+				sssNumber,
+				philhealthNumber,
+				user: req.user.id,
+			});
+		} catch (err) {}
+	}
+);
 
 // @route 	DELETE api/employees/:id
 // @desc 		Delete employee
