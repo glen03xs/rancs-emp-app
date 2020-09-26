@@ -8,6 +8,7 @@ const EmployeeSchema = mongoose.Schema({
 	employeeNo: {
 		type: Number,
 		required: true,
+		unique: true,
 	},
 	name: {
 		type: String,
