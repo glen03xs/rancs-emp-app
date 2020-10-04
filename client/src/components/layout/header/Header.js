@@ -16,10 +16,10 @@ const Header = () => {
 						</button>
 					</div>
 					<div className='main-content-header--top__left-wrap-search-bar'>
-						<button className='header-btn-search'>
+						<button className='btn-search'>
 							<i className='fa fa-search'></i>
 						</button>
-						<input type='text' className='header-search-field' />
+						<input type='text' className='search-field' />
 					</div>
 				</div>
 				<div className='main-content-header--top__right-wrap'>
@@ -49,14 +49,14 @@ const Header = () => {
 				<div className='main-content-header--bottom__breadcrumb-wrap'>
 					<ul>
 						<li>
-							<Link to='./'>Home</Link>
+							<Link to='./'>Dashboard</Link>
 						</li>
-						<li>Dashboard</li>
+
 					</ul>
 				</div>
 				<div className='main-content-header--bottom__setttings-wrap'>
 					<div className='main-content-header--bottom__settings'>
-						<Link to='./'>
+						<Link to='./' className="btn-header-settings">
 							<img src={cogWheelIcon} className='menu-icon' alt='' />
 						</Link>
 					</div>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Sidebar from './components/layout/sidebar/Sidebar';
 import Header from './components/layout/header/Header';
 import Dashboard from './components/pages/Dashboard';
-import EmployeeDatabase from './components/pages/EmployeeDatabase';
+import EmployeeDatabase from './components/employees/EmployeeDatabase';
 
 import './App.css';
 
