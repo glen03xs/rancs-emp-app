@@ -3264,7 +3264,7 @@ html {
 
 body {
   color: #333;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   margin: 0;
@@ -3329,8 +3329,8 @@ h6 {
 p {
   margin-bottom: 1.25em;
   line-height: 1.1em;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: 300; }
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; }
 
 img {
   vertical-align: middle;
@@ -3558,6 +3558,30 @@ ol ol, ul ul, ol ul, ul ol {
 /* ---------------------------------------------------------------------------------------
   Main Styles
  * --------------------------------------------------------------------------------------*/
+.form-group-inline {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center; }
+  .form-group-inline label {
+    padding-right: 16px; }
+
+.form-control {
+  background-color: #F3F6F9;
+  width: 100%;
+  border: none;
+  height: calc(1.5em + 1.3rem + 2px);
+  padding: 0.65rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #3F4254;
+  background-clip: padding-box;
+  box-shadow: none;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+
 /*-------------- Pages --------------*/
 .main-content {
   margin-left: 280px;
@@ -3629,16 +3653,17 @@ ol ol, ul ul, ol ul, ul ol {
   height: calc(100vh - 280px);
   overflow: auto;
   margin: 20px 0; }
-  .employee-database--profile-list-wrap div:first-child {
+  .employee-database--profile-list-wrap > div:first-child {
     padding-top: 0;
-    border-top: 0; }
-  .employee-database--profile-list-wrap div:last-child {
+    padding-bottom: 26px !important;
+    border-bottom: 1px solid #d8dbe0 !important; }
+  .employee-database--profile-list-wrap > div:last-child {
     padding-bottom: 0;
     border-bottom: 0; }
 
 .employee-database--profile-item {
   padding: 26px;
-  border-top: 1px solid #d8dbe0; }
+  border-bottom: 1px solid #d8dbe0; }
   .employee-database--profile-item__head {
     border-bottom: 1px solid #d8dbe0;
     display: -webkit-box;
@@ -3669,6 +3694,7 @@ ol ol, ul ul, ol ul, ul ol {
         font-size: 20px;
         padding-top: 2px; }
     .employee-database--profile-item__head .profile-item--btn-edit {
+      font-size: 14px;
       position: absolute;
       right: 0;
       top: 0; }
@@ -3696,18 +3722,149 @@ ol ol, ul ul, ol ul, ul ol {
       .employee-database--profile-item__body .profile-item--secondary-details-btn-wrap .profile-item__btn-view {
         color: #fff;
         background: #1478D3;
-        font-size: .90rem;
-        padding: 6px 12px; }
+        font-size: .75rem;
+        padding: 6px 12px;
+        cursor: pointer; }
         .employee-database--profile-item__body .profile-item--secondary-details-btn-wrap .profile-item__btn-view:hover {
           background: #1262ac;
           -webkit-transition: all 0.2s ease-in;
           transition: all 0.2s ease-in; }
+
+.employee-database--main__profile-id-name-wrap {
+  display: -webkit-box;
+  display: flex;
+  margin-top: 24px;
+  padding: 0 60px; }
+  .employee-database--main__profile-id-name-wrap .profile-pic-upload {
+    width: 36%;
+    display: -webkit-box;
+    display: flex; }
+    .employee-database--main__profile-id-name-wrap .profile-pic-upload--label {
+      width: 25%;
+      margin-right: 10px; }
+    .employee-database--main__profile-id-name-wrap .profile-pic-upload--input {
+      position: relative; }
+      .employee-database--main__profile-id-name-wrap .profile-pic-upload--input__preview {
+        background: url(../img/emp-thumb.jpg);
+        background-size: cover;
+        height: 140px;
+        width: 140px; }
+      .employee-database--main__profile-id-name-wrap .profile-pic-upload--input__upload {
+        position: absolute;
+        top: -7px;
+        right: -5px;
+        box-shadow: 0px 9px 16px 0px rgba(24, 28, 50, 0.25) !important;
+        border-radius: 50%;
+        height: 22px;
+        width: 22px;
+        background: #fff;
+        cursor: pointer; }
+        .employee-database--main__profile-id-name-wrap .profile-pic-upload--input__upload i {
+          color: #B5B5C3;
+          font-size: 14px;
+          padding: 4px 5px; }
+        .employee-database--main__profile-id-name-wrap .profile-pic-upload--input__upload:hover {
+          background: #e9e9e9;
+          -webkit-transition: .2s all ease-in;
+          transition: .2s all ease-in; }
+        .employee-database--main__profile-id-name-wrap .profile-pic-upload--input__upload input[type="file"] {
+          display: none; }
+  .employee-database--main__profile-id-name-wrap .name-emp-no {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 64%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+            justify-content: space-evenly; }
+    .employee-database--main__profile-id-name-wrap .name-emp-no--form-group {
+      width: 100%; }
+      .employee-database--main__profile-id-name-wrap .name-emp-no--form-group .emp-no-label {
+        min-width: 118px; }
+      .employee-database--main__profile-id-name-wrap .name-emp-no--form-group input::-webkit-outer-spin-button,
+      .employee-database--main__profile-id-name-wrap .name-emp-no--form-group input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      .employee-database--main__profile-id-name-wrap .name-emp-no--form-group input[type=number] {
+        -moz-appearance: textfield; }
+
+.employee-database--main__other-info {
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  .employee-database--main__other-info .other-info-line {
+    display: -webkit-box;
+    display: flex;
+    padding: 0 20px;
+    margin-bottom: 16px; }
+    .employee-database--main__other-info .other-info-line--form-group {
+      padding-right: 26px; }
+  .employee-database--main__other-info .other-info-line div:last-child {
+    padding-right: 0; }
+  .employee-database--main__other-info .position-contact-no-line--left {
+    width: 52%; }
+  .employee-database--main__other-info .position-contact-no-line--right {
+    width: 48%; }
+    .employee-database--main__other-info .position-contact-no-line--right label {
+      min-width: 158px; }
+  .employee-database--main__other-info .gender-email-line--left {
+    width: 44%; }
+  .employee-database--main__other-info .gender-email-line--right {
+    width: 56%; }
+    .employee-database--main__other-info .gender-email-line--right label {
+      min-width: 142px; }
+  .employee-database--main__other-info .address-line--single {
+    width: 100%; }
+  .employee-database--main__other-info .civil-status-dob-line--left {
+    width: 50%; }
+    .employee-database--main__other-info .civil-status-dob-line--left label {
+      min-width: 108px; }
+  .employee-database--main__other-info .civil-status-dob-line--right {
+    width: 50%; }
+    .employee-database--main__other-info .civil-status-dob-line--right label {
+      min-width: 118px; }
+  .employee-database--main__other-info .pob-doh-line--left {
+    width: 56%; }
+    .employee-database--main__other-info .pob-doh-line--left label {
+      min-width: 124px; }
+  .employee-database--main__other-info .pob-doh-line--right {
+    width: 44%; }
+    .employee-database--main__other-info .pob-doh-line--right label {
+      min-width: 104px; }
+  .employee-database--main__other-info .sss-philhealth-no-line--left {
+    width: 50%; }
+    .employee-database--main__other-info .sss-philhealth-no-line--left label {
+      min-width: 118px; }
+  .employee-database--main__other-info .sss-philhealth-no-line--right {
+    width: 50%; }
+    .employee-database--main__other-info .sss-philhealth-no-line--right label {
+      min-width: 128px; }
+  .employee-database--main__other-info .btn-wrap-line {
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+    margin-top: 40px; }
 
 /*-------------- Parts --------------*/
 /*-------------- Modules --------------*/
 /* ---------------------------------------------------------------------------------------
  Button Styles
 * --------------------------------------------------------------------------------------*/
+.btn {
+  background: #1478D3;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px 34px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in; }
+  .btn:hover {
+    background: #1262ac;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in; }
+
 .btn-search {
   background: transparent;
   right: 6px;
@@ -3741,4 +3898,3 @@ ol ol, ul ul, ol ul, ul ol {
   Headline
  * --------------------------------------------------------------------------------------*/
 /*-------------- Themes --------------*/
-

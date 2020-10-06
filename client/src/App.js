@@ -4,31 +4,35 @@ import Sidebar from './components/layout/sidebar/Sidebar';
 import Header from './components/layout/header/Header';
 import Dashboard from './components/pages/Dashboard';
 import EmployeeDatabase from './components/employees/EmployeeDatabase';
+import EmployeeState from './context/employee/EmployeeState';
+
 
 import './App.css';
 
 const App = () => {
 	return (
-		<Router>
-			<div className='main-container'>
-				<div className='main-sidebar'>
-					<Sidebar />
-				</div>
-				<div className='main-content'>
-					<Header />
-					<div className='content-area'>
-						<Switch>
-							<Route exact path='/' component={Dashboard} />
-							<Route
-								exact
-								path='/employee-database'
-								component={EmployeeDatabase}
-							/>
-						</Switch>
+		<EmployeeState>
+			<Router>
+				<div className='main-container'>
+					<div className='main-sidebar'>
+						<Sidebar />
+					</div>
+					<div className='main-content'>
+						<Header />
+						<div className='content-area'>
+							<Switch>
+								<Route exact path='/' component={Dashboard} />
+								<Route
+									exact
+									path='/employee-database'
+									component={EmployeeDatabase}
+								/>
+							</Switch>
+						</div>
 					</div>
 				</div>
-			</div>
-		</Router>
+			</Router>
+		</EmployeeState>
 	);
 };
 
