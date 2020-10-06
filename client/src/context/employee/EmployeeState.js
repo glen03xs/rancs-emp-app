@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { v4 as uuid } from "uuid";
 import EmployeeContext from './EmployeeContext';
 import employeeReducer from './EmployeeReducer';
 import {
@@ -15,6 +16,7 @@ const EmployeeState = (props) => {
 	const initialState = {
 		employees: [
 			{
+				id: 1,
 				employeeNo: 100101,
 				name: 'George C Salem',
 				position: 'Admin Officer',
@@ -30,6 +32,7 @@ const EmployeeState = (props) => {
 				philhealthNumber: '535290657',
 			},
 			{
+				id: 2,
 				employeeNo: 100102,
 				name: 'Monty S Harpe',
 				position: 'Office Staff',
@@ -45,6 +48,7 @@ const EmployeeState = (props) => {
 				philhealthNumber: '5341354157',
 			},
 			{
+				id: 3,
 				employeeNo: 100103,
 				name: 'Betty W Fisher',
 				position: 'Logistics Manager',
@@ -60,6 +64,7 @@ const EmployeeState = (props) => {
 				philhealthNumber: '7894154157',
 			},
 			{
+				id: 4,
 				employeeNo: 100104,
 				name: 'Dani O Maurer',
 				position: 'Supervisor',
@@ -75,6 +80,7 @@ const EmployeeState = (props) => {
 				philhealthNumber: '7614146157',
 			},
 			{
+				id: 5,
 				employeeNo: 100105,
 				name: 'Derrick W Alvey',
 				position: 'Manufacturing Supervisor',
@@ -90,6 +96,7 @@ const EmployeeState = (props) => {
 				philhealthNumber: '2674440099',
 			},
 			{
+				id: 6,
 				employeeNo: 100106,
 				name: 'Madeline M Byers',
 				position: 'Surveyor',
@@ -111,6 +118,10 @@ const EmployeeState = (props) => {
 
 	//Actions
 	// Add Employee
+	const addEmployee = employee => {
+		employee.id = uuid.v4;
+		dispatch({ type: ADD_EMPLOYEE, payload: employee })
+	}
 	// Delete Employee
 	// Set current Employee
 	// Clear current Employee
