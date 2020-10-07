@@ -123,6 +123,9 @@ const EmployeeState = (props) => {
 		dispatch({ type: ADD_EMPLOYEE, payload: employee })
 	}
 	// Delete Employee
+	const deleteEmployee = id => {
+		dispatch({ type: DELETE_EMPLOYEE, payload: id })
+	}
 	// Set current Employee
 	// Clear current Employee
 	// update Employee
@@ -130,7 +133,7 @@ const EmployeeState = (props) => {
 	// Clear Filter Employee
 
 	return (
-		<EmployeeContext.Provider value={{ employees: state.employees }}>
+		<EmployeeContext.Provider value={{ employees: state.employees, addEmployee, deleteEmployee }}>
 			{props.children}
 		</EmployeeContext.Provider>
 	);

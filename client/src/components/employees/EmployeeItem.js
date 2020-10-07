@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
+import EmployeeContext from '../../context/employee/EmployeeContext';
 
 import empThumb from './emp-thumb.jpg'
 
 const EmployeeItem = ({ employee }) => {
+	const employeeContext = useContext(EmployeeContext);
+	const { deleteEmployee } = employeeContext;
 
-	const { employeeNo, name, position, contactNumber, email, address } = employee;
+	const { id, employeeNo, name, position, contactNumber, email, address } = employee;
+
+	const onDelete = () => {
+		deleteEmployee(id)
+	}
 
 	return (
 		<div className="employee-database--profile-item">
@@ -37,6 +44,7 @@ const EmployeeItem = ({ employee }) => {
 					</div>
 					<div className="profile-item--secondary-details-btn-wrap">
 						<Link to="/" className="profile-item__btn-view">View</Link>
+						<button className="profile-item__btn-delete" onClick={onDelete}>Delete</button>
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-/* -------------------------------------------------------------------------------------/*
+* -------------------------------------------------------------------------------------/*
 Glen Nepomuceno CSS framework
 Ver: 1.0 \ Author URI: glennepomuceno.com
 /* -------------------------------------------------------------------------------------*/
@@ -10,7 +10,7 @@ Ver: 1.0 \ Author URI: glennepomuceno.com
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
- html {
+html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -3703,12 +3703,14 @@ ol ol, ul ul, ol ul, ul ol {
     .employee-database--profile-item__body .profile-item--secondary-details-wrap {
       display: -webkit-box;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       position: relative; }
       .employee-database--profile-item__body .profile-item--secondary-details-wrap p {
         margin: 3px; }
     .employee-database--profile-item__body .profile-item--secondary-details-info-title {
-      width: 35%; }
+      width: 35%;
+      min-width: 116px;
+      min-height: 117px; }
       .employee-database--profile-item__body .profile-item--secondary-details-info-title p {
         font-weight: 600; }
     .employee-database--profile-item__body .profile-item--secondary-details-info-value {
@@ -3722,11 +3724,23 @@ ol ol, ul ul, ol ul, ul ol {
       .employee-database--profile-item__body .profile-item--secondary-details-btn-wrap .profile-item__btn-view {
         color: #fff;
         background: #1478D3;
-        font-size: .75rem;
-        padding: 6px 12px;
-        cursor: pointer; }
+        font-size: .65rem;
+        padding: 6px 10px;
+        cursor: pointer;
+        margin-right: 3px; }
         .employee-database--profile-item__body .profile-item--secondary-details-btn-wrap .profile-item__btn-view:hover {
           background: #1262ac;
+          -webkit-transition: all 0.2s ease-in;
+          transition: all 0.2s ease-in; }
+      .employee-database--profile-item__body .profile-item--secondary-details-btn-wrap .profile-item__btn-delete {
+        border: none;
+        color: #fff;
+        background: #dc3545;
+        font-size: .65rem;
+        padding: 8px 10px;
+        cursor: pointer; }
+        .employee-database--profile-item__body .profile-item--secondary-details-btn-wrap .profile-item__btn-delete:hover {
+          background: #a44c54;
           -webkit-transition: all 0.2s ease-in;
           transition: all 0.2s ease-in; }
 
