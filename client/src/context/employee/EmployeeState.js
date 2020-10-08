@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { v4 as uuid } from "uuid";
+import { v4 as uuid } from 'uuid';
 import EmployeeContext from './EmployeeContext';
 import employeeReducer from './EmployeeReducer';
 import {
@@ -9,7 +9,7 @@ import {
 	CLEAR_CURRENT,
 	UPDATE_EMPLOYEE,
 	FILTER_EMPLOYEES,
-	CLEAR_EMPLOYEES
+	CLEAR_EMPLOYEES,
 } from '../types';
 
 const EmployeeState = (props) => {
@@ -112,31 +112,50 @@ const EmployeeState = (props) => {
 				philhealthNumber: '2674440099',
 			},
 		],
+		current: null,
 	};
 
 	const [state, dispatch] = useReducer(employeeReducer, initialState);
 
 	//Actions
 	// Add Employee
-	const addEmployee = employee => {
+	const addEmployee = (employee) => {
 		employee.id = uuid.v4;
-		dispatch({ type: ADD_EMPLOYEE, payload: employee })
-	}
+		dispatch({ type: ADD_EMPLOYEE, payload: employee });
+	};
 	// Delete Employee
-	const deleteEmployee = id => {
-		dispatch({ type: DELETE_EMPLOYEE, payload: id })
-	}
+	const deleteEmployee = (id) => {
+		dispatch({ type: DELETE_EMPLOYEE, payload: id });
+	};
 	// Set current Employee
+	const setCurrent = (employee) => {
+		dispatch({ type: SET_CURRENT, payload: employee });
+	};
 	// Clear current Employee
-	// update Employee
+	const clearCurrent = () => {
+		dispatch({ type: CLEAR_CURRENT });
+	};
+	// Update Employee
+	const updateEmployee = (employee) => {
+		dispatch({ type: UPDATE_EMPLOYEE, payload: employee });
+	};
 	// Filter Employee
 	// Clear Filter Employee
 
 	return (
-		<EmployeeContext.Provider value={{ employees: state.employees, addEmployee, deleteEmployee }}>
+		<EmployeeContext.Provider
+			value={{
+				employees: state.employees,
+				current: state.current,
+				addEmployee,
+				deleteEmployee,
+				setCurrent,
+				clearCurrent,
+				updateEmployee,
+			}}>
 			{props.children}
 		</EmployeeContext.Provider>
 	);
 };
 
-export default EmployeeState
+export default EmployeeState;
