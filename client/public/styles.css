@@ -4670,6 +4670,14 @@ ul ol {
 	border-bottom: 0;
 }
 
+.employee-database--profile-no-list {
+	padding: 20px;
+	min-height: 140px;
+}
+.employee-database--profile-no-list h4 {
+	font-size: 18px;
+}
+
 .employee-database--profile-item {
 	padding: 22px 26px;
 	border-bottom: 1px solid #d8dbe0;

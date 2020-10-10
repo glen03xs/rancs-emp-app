@@ -9,7 +9,7 @@ import {
 	CLEAR_CURRENT,
 	UPDATE_EMPLOYEE,
 	FILTER_EMPLOYEES,
-	CLEAR_EMPLOYEES,
+	CLEAR_FILTER,
 } from '../types';
 
 const EmployeeState = (props) => {
@@ -113,6 +113,7 @@ const EmployeeState = (props) => {
 			},
 		],
 		current: null,
+		filtered: null,
 	};
 
 	const [state, dispatch] = useReducer(employeeReducer, initialState);
@@ -140,18 +141,27 @@ const EmployeeState = (props) => {
 		dispatch({ type: UPDATE_EMPLOYEE, payload: employee });
 	};
 	// Filter Employee
+	const filterEmployees = (text) => {
+		dispatch({ type: FILTER_EMPLOYEES, payload: text });
+	};
 	// Clear Filter Employee
+	const clearFilter = () => {
+		dispatch({ type: CLEAR_FILTER });
+	};
 
 	return (
 		<EmployeeContext.Provider
 			value={{
 				employees: state.employees,
 				current: state.current,
+				filtered: state.filtered,
 				addEmployee,
 				deleteEmployee,
 				setCurrent,
 				clearCurrent,
 				updateEmployee,
+				filterEmployees,
+				clearFilter,
 			}}>
 			{props.children}
 		</EmployeeContext.Provider>

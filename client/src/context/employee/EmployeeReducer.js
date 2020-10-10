@@ -5,7 +5,7 @@ import {
 	CLEAR_CURRENT,
 	UPDATE_EMPLOYEE,
 	FILTER_EMPLOYEES,
-	CLEAR_EMPLOYEES,
+	CLEAR_FILTER,
 } from '../types';
 
 export default (state, action) => {
@@ -38,6 +38,24 @@ export default (state, action) => {
 			return {
 				...state,
 				current: null,
+			};
+		case FILTER_EMPLOYEES:
+			return {
+				...state,
+				filtered: state.employees.filter((employee) => {
+					const regex = new RegExp(`${action.payload}`, 'gi');
+					return (
+						employee.name.match(regex) ||
+						employee.position.match(regex) ||
+						employee.email.match(regex) ||
+						employee.address.match(regex)
+					);
+				}),
+			};
+		case CLEAR_FILTER:
+			return {
+				...state,
+				filtered: null,
 			};
 
 		default:
