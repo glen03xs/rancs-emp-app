@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import EmployeeItem from './EmployeeItem';
 import EmployeeContext from '../../context/employee/EmployeeContext';
 import EmployeeSearch from './EmployeeSearch';
@@ -21,19 +22,25 @@ const Employees = () => {
 						</div>
 					) : (
 						<div className='employee-database--profile-list-wrap'>
-							{filtered !== null
-								? filtered.map((employee) => (
-										<EmployeeItem
-											key={employee.employeeNo}
-											employee={employee}
-										/>
-								  ))
-								: employees.map((employee) => (
-										<EmployeeItem
-											key={employee.employeeNo}
-											employee={employee}
-										/>
-								  ))}
+							<TransitionGroup>
+								{filtered !== null
+									? filtered.map((employee) => (
+											<CSSTransition
+												key={employee.employeeNo}
+												timeout={200}
+												classNames='item'>
+												<EmployeeItem employee={employee} />
+											</CSSTransition>
+									  ))
+									: employees.map((employee) => (
+											<CSSTransition
+												key={employee.employeeNo}
+												timeout={700}
+												classNames='item'>
+												<EmployeeItem employee={employee} />
+											</CSSTransition>
+									  ))}
+							</TransitionGroup>
 						</div>
 					)}
 				</div>

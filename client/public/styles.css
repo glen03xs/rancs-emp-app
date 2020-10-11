@@ -4573,6 +4573,27 @@ ul ol {
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+/* Animation (Add After) */
+.item-enter {
+	opacity: 0;
+}
+
+.item-enter-active {
+	opacity: 1;
+	-webkit-transition: opacity 1000ms ease-in;
+	transition: opacity 1000ms ease-in;
+}
+
+.item-exit {
+	opacity: 1;
+}
+
+.item-exit-active {
+	opacity: 0;
+	-webkit-transition: opacity 1000ms ease-in;
+	transition: opacity 1000ms ease-in;
+}
+
 /*-------------- Pages --------------*/
 .main-content {
 	margin-left: 250px;
