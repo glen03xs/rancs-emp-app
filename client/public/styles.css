@@ -4564,6 +4564,7 @@ ul ol {
 	font-weight: 400;
 	line-height: 1.5;
 	color: #3f4254;
+	outline: none;
 	background-clip: padding-box;
 	box-shadow: none;
 	-webkit-transition: border-color 0.15s ease-in-out,
@@ -4595,6 +4596,95 @@ ul ol {
 }
 
 /*-------------- Pages --------------*/
+.start-page-container {
+	background: #ebedef;
+	height: 100vh;
+	-webkit-box-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: flex;
+}
+
+.start-page {
+	max-width: 1366px;
+	margin: 0 auto;
+	width: 100%;
+	display: -webkit-box;
+	display: flex;
+	height: 800px;
+}
+.start-page--col-img-wrap img {
+	height: 100%;
+	width: auto;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+.start-page--col-main-content {
+	background: #fff;
+	flex-basis: 480px;
+	padding: 50px;
+}
+.start-page--col-main-content__img {
+	margin-top: 20px;
+	margin-bottom: 70px;
+}
+.start-page--col-main-content__form-group {
+	margin-top: 20px;
+}
+.start-page--col-main-content__form-group label {
+	margin-bottom: 6px;
+	display: block;
+}
+.start-page--col-main-content__form-group input {
+	outline: none;
+}
+.start-page--col-main-content__form-btn-group {
+	margin-top: 12px;
+}
+.start-page--col-main-content__form-btn-group label {
+	display: block;
+}
+
+.signup-page {
+	margin-top: 50px;
+}
+.signup-page__title {
+	font-size: 1.75rem;
+	margin-bottom: 24px;
+}
+
+@media (max-width: 1440px) {
+	.start-page {
+		max-width: 1140px;
+		height: 700px;
+	}
+}
+
+@media (max-width: 1440px) {
+	.start-page--col-main-content {
+		padding: 40px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.start-page--col-main-content {
+		padding: 30px;
+	}
+}
+
+@media (max-width: 1440px) {
+	.start-page--col-main-content__img {
+		margin-top: 10px;
+		margin-bottom: 50px;
+	}
+}
+
+@media (max-width: 1440px) {
+	.signup-page {
+		margin-top: 32 px;
+	}
+}
+
 .main-content {
 	margin-left: 250px;
 	overflow: hidden;
@@ -4818,6 +4908,7 @@ ul ol {
 	font-size: 0.65rem;
 	padding: 8px 10px;
 	cursor: pointer;
+	outline: none;
 }
 .employee-database--profile-item__body
 	.profile-item--secondary-details-btn-wrap
@@ -5048,6 +5139,11 @@ ul ol {
 	color: #6d6e71;
 }
 
+.btn-start-page {
+	margin-top: 26px;
+	width: 100%;
+}
+
 /*---------------------------------------------------------------------------------------
   Forms Styles
 * --------------------------------------------------------------------------------------*/
@@ -5061,6 +5157,7 @@ ul ol {
 	color: #354052;
 	padding: 8px 34px 8px 14px;
 	outline: none;
+	line-height: 43px;
 }
 
 /* ---------------------------------------------------------------------------------------
